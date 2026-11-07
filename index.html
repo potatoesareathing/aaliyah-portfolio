@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aaliyah | Portfolio</title>
+    <meta name="description" content="Aaliyah builds software people use every day, and small games for fun. Information Science student in Bengaluru." />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- lets the CSS hide elements that will animate in; without JS everything stays visible -->
+    <script>document.documentElement.classList.add("js")</script>
+  </head>
+  <body>
+    <a class="skip" href="#projects">Skip to projects</a>
+
+    <header class="topbar">
+      <nav class="topbar__inner" aria-label="Main">
+        <a class="brand" href="#top">aaliyah</a>
+        <ul class="nav">
+          <li><a href="#projects">Projects and achievements</a></li>
+          <li><a href="#arcade">Arcade</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ROOM: the 3D scene is drawn into #room-canvas by src/room.ts -->
+    <section class="room" id="top" aria-labelledby="intro-name">
+      <canvas id="room-canvas" class="room__canvas" role="img"
+        aria-label="A pixel-art bedroom at night. A yellow neon sign on the wall reads aaliyah. There is a desk with a glowing computer, an arcade cabinet, a shelf of badges, a toolbox and a phone. Rain falls past the window over a city skyline."></canvas>
+      <p class="room__hint" id="room-hint" aria-hidden="true"></p>
+
+      <div class="room__panel">
+        <h1 id="intro-name" class="intro__name">Aaliyah</h1>
+        <p class="intro__line">I build software people use every day, and small games for fun. Information Science student in Bengaluru.</p>
+        <ul class="hotspots" aria-label="Things in the room">
+          <li><button type="button" data-hotspot="pc" data-target="#projects"><span class="key">PC</span>Projects</button></li>
+          <li><button type="button" data-hotspot="arcade" data-target="#arcade"><span class="key">Cabinet</span>Arcade</button></li>
+          <li><button type="button" data-hotspot="shelf" data-target="#about"><span class="key">Shelf</span>About</button></li>
+          <li><button type="button" data-hotspot="toolbox" data-target="#skills"><span class="key">Toolbox</span>Skills</button></li>
+          <li><button type="button" data-hotspot="phone" data-target="#contact"><span class="key">Phone</span>Contact</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+    <main>
+      <!-- PROJECTS -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section__head" data-reveal>
+          <h2 id="projects-title">Projects and achievements</h2>
+          <p>Three builds I'm proudest of, what I've achieved along the way, and a few smaller builds. Pick a level, or use the arrows.</p>
+        </div>
+
+        <div class="levels" data-levels>
+          <div class="levels__tabs" role="tablist" aria-label="Projects and achievements">
+            <button type="button" role="tab" id="tab-sk" aria-controls="level-sk" aria-selected="true">SK Caterers</button>
+            <button type="button" role="tab" id="tab-specforge" aria-controls="level-specforge" aria-selected="false" tabindex="-1">SpecForge</button>
+            <button type="button" role="tab" id="tab-yukti" aria-controls="level-yukti" aria-selected="false" tabindex="-1">YUKTI</button>
+            <button type="button" role="tab" id="tab-wins" aria-controls="level-wins" aria-selected="false" tabindex="-1">Achievements</button>
+            <button type="button" role="tab" id="tab-side" aria-controls="level-side" aria-selected="false" tabindex="-1">Also built</button>
+          </div>
+          <div class="levels__stage">
+          <article class="quest level" data-reveal role="tabpanel" id="level-sk" aria-labelledby="tab-sk">
+            <div class="quest__text">
+              <p class="quest__status quest__status--live"><span class="dot" aria-hidden="true"></span>Live, used daily by the business</p>
+              <h3>SK Caterers and Events</h3>
+              <p>The admin system that runs a catering company in Bengaluru. Bookings, menus, payments, expenses, invoices, reports and staff all live in one place, so nothing gets tracked on paper any more.</p>
+              <ul class="quest__facts">
+                <li>Invoice and receipt PDFs, quotations and refunds for cancelled events</li>
+                <li>Dues list with WhatsApp reminders and CSV reports</li>
+                <li>Owner and staff roles, audit log, login throttling and daily backups</li>
+                <li>Works on the owner's phone as well as a desktop</li>
+              </ul>
+              <p class="stack"><span>Next.js</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>Tailwind CSS</span><span>Zod</span></p>
+              <p class="quest__note">Client work, so the code is private.</p>
+            </div>
+            <figure class="screen screen--illustration" data-screen="sk">
+              <svg viewBox="0 0 160 100" shape-rendering="crispEdges" role="img" aria-labelledby="sk-ill">
+                <title id="sk-ill">Pixel illustration of an admin dashboard: a sidebar, three money totals, a bar chart of monthly bookings and a list of upcoming events.</title>
+                <rect width="160" height="100" fill="#060a2e"/>
+                <rect width="30" height="100" fill="#0a1450"/>
+                <rect x="5" y="6" width="20" height="4" fill="#f4ff3a"/>
+                <g fill="#3d5bff"><rect x="5" y="18" width="18" height="2"/><rect x="5" y="25" width="14" height="2"/><rect x="5" y="32" width="16" height="2"/><rect x="5" y="39" width="12" height="2"/><rect x="5" y="46" width="15" height="2"/></g>
+                <rect x="3" y="16" width="2" height="6" fill="#f4ff3a"/>
+                <g fill="#101c66"><rect x="36" y="6" width="36" height="20"/><rect x="77" y="6" width="36" height="20"/><rect x="118" y="6" width="36" height="20"/></g>
+                <g fill="#8c95cc"><rect x="40" y="10" width="16" height="2"/><rect x="81" y="10" width="14" height="2"/><rect x="122" y="10" width="18" height="2"/></g>
+                <rect x="40" y="16" width="24" height="5" fill="#3dffa8"/><rect x="81" y="16" width="20" height="5" fill="#f4ff3a"/><rect x="122" y="16" width="14" height="5" fill="#ff4fa8"/>
+                <rect x="36" y="32" width="70" height="62" fill="#0a1450"/>
+                <g fill="#3d5bff"><rect x="42" y="70" width="6" height="18"/><rect x="51" y="62" width="6" height="26"/><rect x="60" y="74" width="6" height="14"/><rect x="69" y="54" width="6" height="34"/><rect x="78" y="60" width="6" height="28"/></g>
+                <rect x="87" y="44" width="6" height="44" fill="#f4ff3a"/>
+                <rect x="42" y="38" width="30" height="2" fill="#8c95cc"/>
+                <rect x="111" y="32" width="43" height="62" fill="#0a1450"/>
+                <g fill="#e8ecff"><rect x="115" y="38" width="22" height="2"/><rect x="115" y="50" width="26" height="2"/><rect x="115" y="62" width="20" height="2"/><rect x="115" y="74" width="24" height="2"/></g>
+                <g fill="#8c95cc"><rect x="115" y="42" width="14" height="2"/><rect x="115" y="54" width="12" height="2"/><rect x="115" y="66" width="16" height="2"/><rect x="115" y="78" width="10" height="2"/></g>
+                <rect x="146" y="38" width="4" height="4" fill="#3dffa8"/><rect x="146" y="50" width="4" height="4" fill="#3dffa8"/><rect x="146" y="62" width="4" height="4" fill="#f4ff3a"/><rect x="146" y="74" width="4" height="4" fill="#ff4fa8"/>
+              </svg>
+              <figcaption>Illustration. The real screens hold live client data, so they stay private.</figcaption>
+            </figure>
+          </article>
+
+          <article class="quest level" data-reveal role="tabpanel" id="level-specforge" aria-labelledby="tab-specforge" hidden>
+            <div class="quest__text">
+              <p class="quest__status"><span class="dot" aria-hidden="true"></span>Solo, hackathon build</p>
+              <h3>SpecForge</h3>
+              <p>Universities write course specifications by hand, and they drift from the official format. SpecForge reads a messy spec, plus an optional question-paper blueprint, and returns a corrected one in the official template.</p>
+              <ul class="quest__facts">
+                <li>Re-derives the CO-PO-PSO map instead of copying the old one</li>
+                <li>Rule-based validation report that explains every change</li>
+                <li>Author, reviewer and HOD approval workflow</li>
+                <li>Bring your own AI key (Gemini, OpenRouter or Anthropic), kept only in your browser</li>
+              </ul>
+              <p class="stack"><span>React</span><span>TypeScript</span><span>Express</span><span>Gemini API</span><span>Zod</span><span>Vite</span></p>
+              <p class="quest__links"><a href="https://github.com/potatoesareathing/specforge1">Source on GitHub</a></p>
+            </div>
+            <figure class="screen" data-screen="specforge">
+              <img src="/shots/specforge.webp" alt="SpecForge screen for uploading a course specification and generating the corrected version." width="1280" height="800" loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="quest level" data-reveal role="tabpanel" id="level-yukti" aria-labelledby="tab-yukti" hidden>
+            <div class="quest__text">
+              <p class="quest__status"><span class="dot" aria-hidden="true"></span>Team, shortlisted at Hack2Skill Datathon 2026</p>
+              <h3>YUKTI</h3>
+              <p>A crime intelligence platform designed for the Karnataka State Police. <i>Yukti</i> is Kannada for reasoning, and that's the rule it follows: every AI prediction shows the records behind it, so officers can check the evidence instead of trusting a black box.</p>
+              <ul class="quest__facts">
+                <li><strong>My part:</strong> building the database and integrating the AI models</li>
+                <li>District-level maps, trends and pattern views</li>
+              </ul>
+              <p class="stack"><span>Database design</span><span>AI model integration</span><span>React</span><span>TypeScript</span><span>D3</span><span>Three.js</span></p>
+            </div>
+            <figure class="screen" data-screen="yukti">
+              <img src="/shots/yukti.webp" alt="YUKTI dashboard with a map of Karnataka districts." width="1280" height="800" loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <div class="wins level" data-reveal role="tabpanel" id="level-wins" aria-labelledby="tab-wins" hidden>
+          <h3 class="wins__title">Achievements</h3>
+
+          <article class="trophy">
+            <div class="trophy__art" aria-hidden="true">
+              <span class="trophy__cup"></span>
+              <span class="trophy__stem"></span>
+              <span class="trophy__base"></span>
+              <span class="trophy__spark trophy__spark--1"></span>
+              <span class="trophy__spark trophy__spark--2"></span>
+              <span class="trophy__spark trophy__spark--3"></span>
+            </div>
+            <div class="trophy__text">
+              <h4>DISCOVERIZE</h4>
+              <p>Organized DISCOVERIZE, a research paper competition at Ramaiah University, as a part of the Pravrutti 2.0 National Techfest.</p>
+            </div>
+          </article>
+
+          <ul class="wins__list">
+            <li><span class="wins__badge" aria-hidden="true"></span><strong>Shortlisted, Hack2Skill Datathon 2026</strong> with YUKTI, the crime intelligence platform for Karnataka State Police.</li>
+            <li><span class="wins__badge" aria-hidden="true"></span><strong>Shipped to a real client:</strong> the SK Caterers admin system runs the business every day.</li>
+          </ul>
+        </div>
+
+          <div class="side level" data-reveal role="tabpanel" id="level-side" aria-labelledby="tab-side" hidden>
+          <h3 class="side__title">Also built</h3>
+          <p class="side__hint">Smaller builds. Flip a cartridge to read it.</p>
+          <ul class="carts">
+            <li class="cart" style="--i: 0; --label: #ff4fa8">
+              <button class="cart__flip" type="button" aria-expanded="false" aria-controls="cart-shorts">
+                <span class="cart__front" aria-hidden="true">
+                  <span class="cart__grip"></span>
+                  <span class="cart__label"><span class="cart__art cart__art--shorts"></span><span class="cart__name">Shorts generator</span></span>
+                </span>
+                <span class="visually-hidden">AI YouTube Shorts generator. Show details</span>
+              </button>
+              <div class="cart__back" id="cart-shorts">
+                <h4>AI YouTube Shorts generator</h4>
+                <p>Type a topic and get a finished short: Gemini writes the script, then a Python pipeline assembles visuals, captions and voice into an export-ready video.</p>
+                <p class="stack"><span>Python</span><span>Gemini API</span><span>Gradio</span><span>MoviePy</span></p>
+                <p class="cart__links"><a href="https://github.com/potatoesareathing/shorts_project">Source on GitHub</a></p>
+              </div>
+            </li>
+            <li class="cart" style="--i: 1; --label: #3dffa8">
+              <button class="cart__flip" type="button" aria-expanded="false" aria-controls="cart-edge">
+                <span class="cart__front" aria-hidden="true">
+                  <span class="cart__grip"></span>
+                  <span class="cart__label"><span class="cart__art cart__art--edge"></span><span class="cart__name">EDGE website</span></span>
+                </span>
+                <span class="visually-hidden">EDGE esports club website. Show details</span>
+              </button>
+              <div class="cart__back" id="cart-edge">
+                <h4>EDGE esports club website</h4>
+                <p>The site for the esports and gaming club I help run at RUAS, with a scroll-driven film that plays as you move down the page.</p>
+                <p class="stack"><span>JavaScript</span><span>Three.js</span><span>GSAP</span></p>
+                <p class="cart__links"><a href="https://github.com/potatoesareathing/edge-website">Source on GitHub</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+            <canvas class="levels__fx" aria-hidden="true"></canvas>
+          </div>
+          <div class="levels__nav">
+            <button type="button" class="levels__arrow" data-level-prev aria-label="Previous">◀</button>
+            <p class="levels__count" aria-live="polite"><span data-level-index>1</span> / 5</p>
+            <button type="button" class="levels__arrow" data-level-next aria-label="Next">▶</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARCADE -->
+      <section class="section" id="arcade" aria-labelledby="arcade-title">
+        <div class="section__head" data-reveal>
+          <h2 id="arcade-title">Arcade</h2>
+          <p>My first three games, built following Clear Code's pygame tutorials. They taught me my coding fundamentals. The original Python runs right here in your browser.</p>
+        </div>
+
+        <div class="hall" data-reveal>
+          <div class="hall__backdrop" aria-hidden="true">
+            <div class="hall__neon hall__neon--a"></div>
+            <div class="hall__neon hall__neon--b"></div>
+            <div class="hall__ghost hall__ghost--l"><span></span></div>
+            <div class="hall__ghost hall__ghost--r"><span></span></div>
+            <div class="hall__floor"></div>
+          </div>
+
+          <div class="cab">
+            <div class="cab__marquee" aria-hidden="true">
+              <span class="cab__title">Aaliyah's arcade</span>
+            </div>
+
+            <div class="cab__bezel">
+              <div class="crt" id="crt" role="region" aria-roledescription="carousel" aria-label="Games" tabindex="0">
+                <div class="crt__slides" aria-live="polite">
+                  <article class="crt__slide is-current" data-game="pixel-runner" data-title="Pixel Runner" data-w="800" data-h="400" style="--accent: #3dffa8" aria-roledescription="slide" aria-label="1 of 3: Pixel Runner">
+                    <div class="crt__shot"><img src="/shots/pixel-runner.webp" alt="Pixel Runner gameplay" width="800" height="400" loading="lazy" decoding="async" /></div>
+                    <div class="crt__info">
+                      <p class="crt__level">Game 1 of 3</p>
+                      <h3>Pixel Runner</h3>
+                      <p>Endless runner across an alien world. Jump the snails, duck the flies, and see how long you last.</p>
+                      <p class="crt__controls"><kbd>Space</kbd> or tap to jump, <kbd>Esc</kbd> to pause</p>
+                      <div class="crt__actions">
+                        <button class="btn btn--start" type="button" data-start>Play</button>
+                        <a href="https://github.com/potatoesareathing/pixelrunner">Code</a>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="crt__slide" data-game="flappy-plane" data-title="Flappy Plane" data-w="480" data-h="800" style="--accent: #ff4fa8" aria-roledescription="slide" aria-label="2 of 3: Flappy Plane" hidden>
+                    <div class="crt__shot"><img src="/shots/flappy-plane.webp" alt="Flappy Plane gameplay" width="480" height="800" loading="lazy" decoding="async" /></div>
+                    <div class="crt__info">
+                      <p class="crt__level">Game 2 of 3</p>
+                      <h3>Flappy Plane</h3>
+                      <p>Thread a propeller plane between rock spires. After ten seconds the world speeds up.</p>
+                      <p class="crt__controls"><kbd>Space</kbd> or tap to climb</p>
+                      <div class="crt__actions">
+                        <button class="btn btn--start" type="button" data-start>Play</button>
+                        <a href="https://github.com/potatoesareathing/flappyplane">Code</a>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="crt__slide" data-game="alien-shooters" data-title="Alien Shooters" data-w="1200" data-h="600" style="--accent: #f4ff3a" aria-roledescription="slide" aria-label="3 of 3: Alien Shooters" hidden>
+                    <div class="crt__shot"><img src="/shots/alien-shooters.webp" alt="Alien Shooters gameplay" width="1200" height="600" loading="lazy" decoding="async" /></div>
+                    <div class="crt__info">
+                      <p class="crt__level">Game 3 of 3</p>
+                      <h3>Alien Shooters</h3>
+                      <p>Hold the line behind crumbling bunkers while the alien fleet marches down.</p>
+                      <p class="crt__controls"><kbd>←</kbd> <kbd>→</kbd> to move, <kbd>Space</kbd> to fire, or hold a finger down</p>
+                      <div class="crt__actions">
+                        <button class="btn btn--start" type="button" data-start>Play</button>
+                        <a href="https://github.com/potatoesareathing/spaceinvaders">Code</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="crt__play" hidden>
+                  <div class="crt__frame"></div>
+                  <p class="crt__status" aria-live="polite"></p>
+                </div>
+                <canvas class="crt__static" width="160" height="120" aria-hidden="true"></canvas>
+                <div class="crt__glass" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="cab__panel">
+              <button class="cab__stick" type="button" data-prev aria-label="Previous game">◀</button>
+              <ol class="cab__dots" aria-label="Choose a game">
+                <li><button type="button" data-goto="0" aria-label="Pixel Runner" aria-current="true"></button></li>
+                <li><button type="button" data-goto="1" aria-label="Flappy Plane"></button></li>
+                <li><button type="button" data-goto="2" aria-label="Alien Shooters"></button></li>
+              </ol>
+              <button class="cab__stick" type="button" data-next aria-label="Next game">▶</button>
+              <div class="cab__buttons">
+                <button class="cab__btn cab__btn--a" type="button" data-start-current aria-label="Play the selected game">A</button>
+                <button class="cab__btn cab__btn--b" type="button" data-exit aria-label="Stop the game" disabled>B</button>
+                <button class="cab__btn cab__btn--full" type="button" data-fullscreen aria-label="Play full screen" disabled>⛶</button>
+              </div>
+            </div>
+            <div class="cab__coin" aria-hidden="true"><span>Insert coin</span></div>
+          </div>
+        </div>
+        <p class="arcade__keys">Click the screen and use <kbd>←</kbd> <kbd>→</kbd> to switch games. <kbd>A</kbd> plays, <kbd>B</kbd> stops.</p>
+        <p class="credits">Game art and code structure follow <a href="https://www.youtube.com/@ClearCode">Clear Code</a>'s tutorials. Alien Shooters music by wyver9 and sound effects by SubspaceAudio, both from OpenGameArt. Games run through <a href="https://github.com/pygame-web/pygbag">pygbag</a>, which compiles Python and pygame to WebAssembly.</p>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section__head" data-reveal>
+          <h2 id="about-title">About</h2>
+          <p>Third-year B.Tech student in Information Science and Engineering at Ramaiah University of Applied Sciences, 2024 to 2028.</p>
+        </div>
+        <div class="about" data-reveal>
+          <dl class="stats">
+            <div><dt>CGPA</dt><dd>9.50</dd></div>
+            <div><dt>Shipped to a real client</dt><dd>1</dd></div>
+            <div><dt>Hackathon builds</dt><dd>2</dd></div>
+          </dl>
+          <div class="roles">
+            <h3>Roles</h3>
+            <ul>
+              <li><strong>Head of Media and Tech, EDGE Esports and Gaming Club, RUAS.</strong> I lead the team behind streams, content and the tech setup for gaming events.</li>
+              <li><strong>Membership Coordinator, ISTE, RUAS.</strong> I help run technical events and bring more students into them.</li>
+            </ul>
+            <h3>Certifications</h3>
+            <ul>
+              <li>Data Science Essentials in Python, Cisco Networking Academy, 2025</li>
+              <li>Python Mastery, Code with Mosh, 2025</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="section__head" data-reveal>
+          <h2 id="skills-title">Skills</h2>
+          <p>What's in the toolbox, grouped by what I use it for.</p>
+        </div>
+        <div class="inventory" data-reveal>
+          <div class="inventory__group">
+            <h3>Languages</h3>
+            <ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>Java</li><li>C#</li><li>HTML and CSS</li></ul>
+          </div>
+          <div class="inventory__group">
+            <h3>Web</h3>
+            <ul><li>React</li><li>Next.js</li><li>Node.js</li><li>Express</li><li>Flask</li><li>REST APIs</li><li>Tailwind CSS</li><li>Three.js</li></ul>
+          </div>
+          <div class="inventory__group">
+            <h3>Data and AI</h3>
+            <ul><li>SQLite</li><li>Database design</li><li>Gemini API</li><li>Prompt engineering</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li></ul>
+          </div>
+          <div class="inventory__group">
+            <h3>Tools</h3>
+            <ul><li>Git and GitHub</li><li>Vite</li><li>pygame</li><li>Blender</li><li>DaVinci Resolve</li><li>Debugging</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="section__head" data-reveal>
+          <h2 id="contact-title">Contact</h2>
+          <p>Open to internships and interesting projects. Email gets the fastest reply.</p>
+        </div>
+        <ul class="contact__links" data-reveal>
+          <li><a class="btn btn--big" href="mailto:aaliyahaijaz22006@gmail.com">aaliyahaijaz22006@gmail.com</a></li>
+          <li><a href="https://github.com/potatoesareathing">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/aaliyah-aijaz-ali-khan-6354b935a">LinkedIn</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <details>
+        <summary>How this site is built</summary>
+        <p>The room is a real 3D scene made with Three.js. It's rendered at a fraction of the screen's resolution, then scaled up with hard pixel edges and an ordered dither, which turns smooth 3D into pixel art. The page is plain HTML and TypeScript bundled by Vite, and the games are the original pygame code compiled to WebAssembly with pygbag.</p>
+      </details>
+      <p>Made by Aaliyah in Bengaluru, 2026.</p>
+    </footer>
+
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+*.log
+games/*/build
+
+# Local Netlify folder
+.netlify
+*.docx
+~$*

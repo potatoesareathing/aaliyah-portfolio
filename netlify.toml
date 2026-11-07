@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Game bundles are gzipped tarballs that Python unpacks itself.
+# Serve them as plain bytes, so no browser or CDN unzips them first.
+[[headers]]
+  for = "/games/*/*.bundle"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+    Cache-Control = "public, max-age=86400"
+
+# Hashed build assets never change, so browsers can keep them for a year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

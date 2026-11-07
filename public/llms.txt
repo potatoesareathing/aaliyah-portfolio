@@ -1,0 +1,13 @@
+# Aaliyah
+
+Portfolio of Aaliyah, a third-year Information Science and Engineering student at Ramaiah University of Applied Sciences, Bengaluru.
+
+## Projects
+
+- SK Caterers and Events: admin system in daily use by a catering business (Next.js, TypeScript, SQLite).
+- SpecForge: corrects university course specifications and re-derives the CO-PO-PSO map. Solo hackathon build.
+- YUKTI: crime intelligence platform for Karnataka State Police. Team project, shortlisted at Hack2Skill Datathon 2026. Aaliyah built the database and AI model integration.
+
+## Contact
+
+- GitHub: https://github.com/potatoesareathing
